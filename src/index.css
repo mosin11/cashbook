@@ -1,13 +1,174 @@
-body {
+/* Base styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Dark Mode Theme */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.app {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.time {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Cash book section */
+.cash-book h2 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Tab styles */
+.tabs {
+  display: flex;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 5px;
+  color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  transition: background-color 0.3s;
+}
+
+.tabs button:hover {
+  background-color: #333;
+}
+
+.tabs button.active {
+  background-color: #333;
+  font-weight: bold;
+}
+
+/* Table styles */
+.transactions-table {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  font-weight: bold;
+  background-color: #1e1e1e;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.description {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.cash-in {
+  color: #4caf50;
+  /* Green for cash in */
+}
+
+.cash-out {
+  color: #f44336;
+  /* Red for cash out */
+}
+
+/* Totals section */
+.totals {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .app {
+    padding: 15px;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+  }
+
+  .totals {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.add-transaction-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.add-transaction-form input,
+.add-transaction-form button {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-transaction-form button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.add-transaction-form button:hover {
+  background-color: #45a049;
+}
+
+.balance {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.balance.negative {
+  color: red;
 }
