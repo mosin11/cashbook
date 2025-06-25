@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* Dark Mode Theme */
 .dark-mode {
   background-color: #121212;
@@ -13,9 +18,8 @@
 }
 
 .app {
-  font-family: Arial, sans-serif;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
 }
 
@@ -28,7 +32,6 @@ header {
 }
 
 header h1 {
-  margin: 0;
   font-size: 24px;
 }
 
@@ -37,17 +40,12 @@ header h1 {
   opacity: 0.8;
 }
 
-/* Cash book section */
-.cash-book h2 {
-  margin-top: 0;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-/* Tab styles */
+/* Tabs */
 .tabs {
   display: flex;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin: 1rem 0;
+  flex-wrap: wrap;
   border-bottom: 1px solid #333;
 }
 
@@ -55,7 +53,6 @@ header h1 {
   background: none;
   border: none;
   padding: 8px 16px;
-  margin-right: 5px;
   color: #e0e0e0;
   cursor: pointer;
   border-radius: 4px 4px 0 0;
@@ -66,9 +63,60 @@ header h1 {
   background-color: #333;
 }
 
-.tabs button.active {
-  background-color: #333;
+.tabs .active {
+  background: #000;
+  color: #fff;
   font-weight: bold;
+}
+
+/* Transaction type buttons */
+.transaction-type-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.transaction-type-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background: #eee;
+}
+
+.transaction-type-buttons button:hover {
+  background-color: #ccc;
+}
+
+/* Add transaction form */
+.add-transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+}
+
+.add-transaction-form input,
+.add-transaction-form button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-transaction-form button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.add-transaction-form button:hover {
+  background-color: #45a049;
 }
 
 /* Table styles */
@@ -90,7 +138,6 @@ td {
 }
 
 th {
-  font-weight: bold;
   background-color: #1e1e1e;
 }
 
@@ -105,12 +152,10 @@ th {
 
 .cash-in {
   color: #4caf50;
-  /* Green for cash in */
 }
 
 .cash-out {
   color: #f44336;
-  /* Red for cash out */
 }
 
 /* Totals section */
@@ -123,47 +168,6 @@ th {
   font-weight: bold;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .app {
-    padding: 15px;
-  }
-
-  th,
-  td {
-    padding: 8px 10px;
-  }
-
-  .totals {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-.add-transaction-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.add-transaction-form input,
-.add-transaction-form button {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.add-transaction-form button {
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-}
-
-.add-transaction-form button:hover {
-  background-color: #45a049;
-}
-
 .balance {
   font-weight: bold;
   font-size: 18px;
@@ -171,4 +175,126 @@ th {
 
 .balance.negative {
   color: red;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .add-transaction-form {
+    width: 90%;
+  }
+
+  .totals {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tabs,
+  .transaction-type-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tabs button,
+  .transaction-type-buttons button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  th,
+  td {
+    padding: 8px 10px;
+  }
+}
+
+/* Mobile menu bar styling for tabs */
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #1e1e1e;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+  /* hide scrollbar */
+}
+
+.tabs button {
+  flex: 1 0 auto;
+  white-space: nowrap;
+  margin: 0 5px;
+  background-color: #222;
+  color: #e0e0e0;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tabs button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.transaction-type-buttons button.active {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.tabs-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: #333;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/* Default hidden on mobile, visible on desktop */
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  border-bottom: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+  .tabs {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tabs.show {
+    display: flex;
+  }
+}
+
+
+
+
+/* Mobile behavior */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
