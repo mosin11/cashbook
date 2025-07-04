@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cashbook/static/css/main.7472ae30.css",
-    "main.js": "/cashbook/static/js/main.db195b09.js",
+    "main.js": "/cashbook/static/js/main.d6a68b0d.js",
     "static/js/239.ad7d9634.chunk.js": "/cashbook/static/js/239.ad7d9634.chunk.js",
     "static/js/977.d9a4e40d.chunk.js": "/cashbook/static/js/977.d9a4e40d.chunk.js",
     "static/js/455.fcfb4cc4.chunk.js": "/cashbook/static/js/455.fcfb4cc4.chunk.js",
@@ -9,7 +9,7 @@
     "static/media/logo.png": "/cashbook/static/media/logo.811b4b94441a2b07fd6c.png",
     "index.html": "/cashbook/index.html",
     "main.7472ae30.css.map": "/cashbook/static/css/main.7472ae30.css.map",
-    "main.db195b09.js.map": "/cashbook/static/js/main.db195b09.js.map",
+    "main.d6a68b0d.js.map": "/cashbook/static/js/main.d6a68b0d.js.map",
     "239.ad7d9634.chunk.js.map": "/cashbook/static/js/239.ad7d9634.chunk.js.map",
     "977.d9a4e40d.chunk.js.map": "/cashbook/static/js/977.d9a4e40d.chunk.js.map",
     "455.fcfb4cc4.chunk.js.map": "/cashbook/static/js/455.fcfb4cc4.chunk.js.map",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.7472ae30.css",
-    "static/js/main.db195b09.js"
+    "static/js/main.d6a68b0d.js"
   ]
 }
